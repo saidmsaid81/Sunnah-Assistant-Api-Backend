@@ -73,10 +73,10 @@ export class RateLimiter {
         }
 
         if (!success) {
-          c.executionCtx.waitUntil(
-            new EmailService(env.MY_EMAIL, env.SENDGRID_API_KEY)
-              .sendEmailToDeveloper(`Too many requests ${ip}`)
-          );
+          // c.executionCtx.waitUntil(
+          //   // new EmailService(env.MY_EMAIL, env.SENDGRID_API_KEY)
+          //   //   .sendEmailToDeveloper(`Too many requests ${ip}`)
+          // );
           return new Response(null, { status: 429 });
         }
 
