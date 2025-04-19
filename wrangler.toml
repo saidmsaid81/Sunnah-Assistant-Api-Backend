@@ -1,0 +1,18 @@
+name = "sunnah-assistant-backend"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# KV Namespace for rate limiting
+kv_namespaces = [
+  { binding = "RATE_LIMITS", preview_id = "10816687df9e41b3b0a6fd166c67674b", id = "1ccf6189aa24446e86edb4e627f820d6" }
+]
+
+[triggers]
+crons = []
+
+[env.production]
+# Production-specific settings
+
+[miniflare]
+kv_persist = true
