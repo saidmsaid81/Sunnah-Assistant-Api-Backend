@@ -8,6 +8,11 @@ kv_namespaces = [
   { binding = "RATE_LIMITS", preview_id = "10816687df9e41b3b0a6fd166c67674b", id = "1ccf6189aa24446e86edb4e627f820d6" }
 ]
 
+routes = [
+  { pattern = "api.thesunnahrevival.com", custom_domain = true }
+]
+
+
 [triggers]
 crons = []
 
