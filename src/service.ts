@@ -71,7 +71,7 @@ export class GeocodingService {
     if (successfulStatuses.includes(geocodingData.status)) {
         return geocodingData;
     } else {
-        await this.reportGeocodingServerError(`Google Geocoding Api ${geocodingData.status}`);
+        // await this.reportGeocodingServerError(`Google Geocoding Api ${geocodingData.status}`);
         return this.getOpenWeatherGeocodingData(address, language);
     }
 }
@@ -119,7 +119,7 @@ export class GeocodingService {
    * Report geocoding server error
    */
   private async reportGeocodingServerError(status: string): Promise<GeocodingData> {
-    await this.emailService.sendEmailToDeveloper(status);
+    // await this.emailService.sendEmailToDeveloper(status);
    throw new Error("An error occurred while performing this action");
   }
 }
