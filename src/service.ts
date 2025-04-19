@@ -116,10 +116,10 @@ export class GeocodingService {
   }
 
   /**
-   * Report geocoding server error and return empty result
+   * Report geocoding server error
    */
   private async reportGeocodingServerError(status: string): Promise<GeocodingData> {
     await this.emailService.sendEmailToDeveloper(status);
-    return { results: [], status: 'AN_ERROR_OCCURRED' };
+   throw new Error("An error occurred while performing this action");
   }
 }
