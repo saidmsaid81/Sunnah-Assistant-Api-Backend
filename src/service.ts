@@ -28,13 +28,13 @@ export class GeocodingService {
       const geocodingData = await this.getGoogleGeocodingData(address, language);
       return {
         results: geocodingData.results.map(result => {
-          const lastPart = result.formattedAddress.split(', ').pop() || '';
+          const lastPart = result.formatted_address.split(', ').pop() || '';
 
           return {
             ...result,
-            formattedAddress: this.filters.has(lastPart.toLowerCase())
-              ? result.formattedAddress.substring(0, result.formattedAddress.lastIndexOf(','))
-              : result.formattedAddress
+            formatted_address: this.filters.has(lastPart.toLowerCase())
+              ? result.formatted_address.substring(0, result.formatted_address.lastIndexOf(','))
+              : result.formatted_address
           };
         }),
         status: geocodingData.status
@@ -110,7 +110,7 @@ export class GeocodingService {
 
     const location: Location = { lat: data.lat, lng: data.lon };
     const geometry: Geometry = { location };
-    const result: Result = { formattedAddress: formattedAddress, geometry };
+    const result: Result = { formatted_address: formattedAddress, geometry };
 
     return { results: [result], status: 'OK' };
   }
