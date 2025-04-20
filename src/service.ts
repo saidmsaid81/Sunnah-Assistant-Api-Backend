@@ -28,12 +28,16 @@ export class GeocodingService {
       const geocodingData = await this.getGoogleGeocodingData(address, language);
       return {
         results: geocodingData.results.map(result => {
-          const lastPart = result.formattedAddress.split(', ').pop() || '';
+          const lastPart = result.formattedAddress.includes('،')
+            ? result.formattedAddress.split('، ').pop() || '' // Handle Arabic comma
+            : result.formattedAddress.split(', ').pop() || ''; // Handle English comma
 
           return {
             ...result,
             formattedAddress: this.filters.has(lastPart.toLowerCase())
-              ? result.formattedAddress.substring(0, result.formattedAddress.lastIndexOf(','))
+              ? result.formattedAddress.includes('،')
+                ? result.formattedAddress.substring(0, result.formattedAddress.lastIndexOf('،'))
+                : result.formattedAddress.substring(0, result.formattedAddress.lastIndexOf(','))
               : result.formattedAddress
           };
         }),
