@@ -8,7 +8,7 @@ export interface GeocodingData {
 }
 
 export interface Result {
-  formatted_address: string;
+  formattedAddress: string;
   geometry: Geometry;
 }
 
