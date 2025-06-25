@@ -37,4 +37,12 @@ app.get('/geocoding-data', async (c) => {
   }
 });
 
+app.get('/resources/links', (c) => {
+  return c.json({
+    translationLink: c.env.TRANSLATION_LINK,
+    quranZipFileLink: c.env.QURAN_ZIP_FILE_LINK,
+    quranPagesLink: c.env.QURAN_PAGES_LINK,
+  });
+});
+
 export { app };
