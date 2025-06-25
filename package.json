@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "author": "",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "dependencies": {
     "hono": "^3.5.0",
     "@sendgrid/mail": "^7.7.0"
