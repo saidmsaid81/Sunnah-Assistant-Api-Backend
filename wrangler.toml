@@ -23,6 +23,6 @@ crons = []
 kv_persist = true
 
 [vars]
-TRANSLATION_LINK = "https://raw.githubusercontent.com/saidmsaid81/Sunnah-Assistant-Resources/main/translations/"
+TRANSLATION_LINK = "https://raw.githubusercontent.com/saidmsaid81/Sunnah-Assistant-Resources/main/translations"
 QURAN_ZIP_FILE_LINK = "https://raw.githubusercontent.com/saidmsaid81/Sunnah-Assistant-Resources/main/quran.zip"
-QURAN_PAGES_LINK = "https://raw.githubusercontent.com/saidmsaid81/Sunnah-Assistant-Resources/main/quran_pages/"
+QURAN_PAGES_LINK = "https://raw.githubusercontent.com/saidmsaid81/Sunnah-Assistant-Resources/main/quran_pages"
