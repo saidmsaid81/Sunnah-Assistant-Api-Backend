@@ -37,4 +37,14 @@ app.get('/geocoding-data', async (c) => {
   }
 });
 
+// Resources links endpoint
+app.get('/resources/links', (c) => {
+  return c.json({
+    translationLink: c.env.TRANSLATION_LINK,
+    adhkaarLink: c.env.ADHKAAR_LINK,
+    quranZipFileLink: c.env.QURAN_ZIP_FILE_LINK,
+    quranPagesLink: c.env.QURAN_PAGES_LINK
+  });
+});
+
 export { app };

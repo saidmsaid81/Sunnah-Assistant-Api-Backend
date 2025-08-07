@@ -44,4 +44,10 @@ export interface Env {
   FILTER_STRING: string;
   EXPECTED_USER_AGENT: string;
   CURRENT_APP_VERSION: string;
+  
+  // Resource links
+  TRANSLATION_LINK: string;
+  ADHKAAR_LINK: string;
+  QURAN_ZIP_FILE_LINK: string;
+  QURAN_PAGES_LINK: string;
 }
