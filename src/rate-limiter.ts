@@ -18,7 +18,7 @@ export class RateLimiter {
    */
   static middleware() {
     return async (c: Context<{ Bindings: Env }>, next: Next) => {
-      if (c.req.path.startsWith('/health')) {
+      if (!c.req.path.startsWith('/geocoding-data')) {
         return next();
       }
 
